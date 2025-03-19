@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, Typography, Grid, MenuItem, IconButton, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Box, TextField, Button, Typography, Grid, MenuItem,  Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 function RuleBuilder() {
@@ -12,7 +12,7 @@ function RuleBuilder() {
   const [manualRules, setManualRules] = useState([]);
   const [output, setOutput] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [logicalOperator, setLogicalOperator] = useState("AND");
+  
 
   const addManualRule = () => {
     setManualRules([
@@ -38,7 +38,6 @@ function RuleBuilder() {
   };
 
   const handleDialogClose = (operator) => {
-    setLogicalOperator(operator);
     setDialogOpen(false);
     generateRuleWithOperator(operator);
   };
